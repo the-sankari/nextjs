@@ -54,3 +54,25 @@ npm run start
 - Tailwind config: `nextjs-demo/postcss.config.mjs` and project-level `tailwind.config.*` (if present)
 
 If you want me to open the app in a browser or start the dev server for you, tell me and I'll run it in the terminal and report back the logs.
+
+
+
+### Error handling
+```
+Git subtree folder containg gitlink
+
+# 1) make a safety branch
+git switch -c fix/convert-nextjs-demo-to-subtree
+
+# 2) remove the gitlink entry from the index (keeps working tree)
+git rm --cached -r nextjs-demo
+
+# 3) add the folder contents as normal tracked files
+git add nextjs-demo
+
+# 4) commit
+git commit -m "Convert nextjs-demo submodule/gitlink to normal tracked folder"
+
+# 5) push to remote (push branch or merge to main)
+git push origin HEAD
+```
